@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Button, TouchableOpacity, StatusBar } from 'react-native'
 
 const Splash = ({ navigation }) => {
     return (
@@ -11,9 +11,10 @@ const Splash = ({ navigation }) => {
                 <Text style={styles.welcome}>Welcome</Text>
                 <Text style={styles.intro}>Find out every thing you need to know about the 2021 Elections.</Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.introBtn} >
-                    <Text>Get Started </Text>
+                    <Text style={styles.btnText}>Get Started </Text>
                 </TouchableOpacity>
             </View>
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="#0011ff" translucent={true} />
         </View>
     )
 }
@@ -64,6 +65,9 @@ const styles = StyleSheet.create(
             alignSelf: 'flex-end',
             color: '#fff',
             width: 150
+        },
+        btnText: {
+            color: '#ffffff'
         }
     }
 )
